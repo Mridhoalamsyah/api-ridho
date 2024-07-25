@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string('judul')->unique();
-            $table->string('slug');
             $table->string('foto');
             $table->text('deskripsi');
             $table->string('url_video');
@@ -35,7 +34,7 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('films');
-        Schema::dropIfExists('genre_film');
-        Schema::dropIfExists('aktor_film');
+        Schema::dropIfExists('genre_films');
+        Schema::dropIfExists('aktor_films');
     }
 };
